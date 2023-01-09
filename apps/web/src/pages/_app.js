@@ -2,7 +2,7 @@ import React, { useReducer, useEffect } from 'react';
 import { useRouter } from 'next/router';
 
 import '../styles/globals.css';
-import 'antd/dist/antd.css';
+import 'antd/dist/reset.css';
 
 import AuthContext from '../utils/authContext';
 import { authReducer, initialStateAuth } from '../store/reducers/authReducer';
@@ -69,6 +69,7 @@ function MyApp(props) {
   };
 
   const fetchFailure = (error) => {
+    console.log('error', error);
     dispatchApi(Fetch_failure(error));
     throw new Error('Error Detected, code execution stopped');
   };

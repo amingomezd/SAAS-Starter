@@ -101,7 +101,7 @@ const ConfirmedInvite = () => {
           <Title>
             Your invite to the app has been confirmed, click below to navigate to the app
           </Title>
-          <Link href={`/app/${org_id}/dashboard`}>
+          <Link legacyBehavior href={`/app/${org_id}/dashboard`}>
             <a>
               <ConfirmButton>Go to App</ConfirmButton>
             </a>

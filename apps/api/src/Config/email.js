@@ -43,7 +43,7 @@ export const email = new Email({
   },
   send: true,
   transport,
-  preview: true, // to preview emails in your own browser
+  preview: false, // to preview emails in your own browser
   views: {
     options: {
       extension: 'hbs'
