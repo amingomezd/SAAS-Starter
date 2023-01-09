@@ -1,127 +1,73 @@
-<h1 align="center">Welcome to SAAS Starter Kit!
-</h1>
-<p align="center">
-  <img height="auto" width="400px" src="https://user-images.githubusercontent.com/24860061/113771653-839ae180-96d8-11eb-9df5-49a856019be4.png" />
-<p align="center">
-<br />
-<br />
- 
-> Saas Starter Kit is a modern SAAS boilerplate. Save weeks of development time having standard SAAS features implemented for you, and start building your core app right away. 
+# Turborepo starter
 
+This is an official Yarn v1 starter turborepo.
 
-## 🎛 Tech Stack 
-#### Frontend:
-React, Nextjs, Styled Components, AntD, Firebase Auth. 
+## What's inside?
 
-#### Server: 
-Nodejs, Express, Docker, Jest, Postgres or Mongodb.  
-<br />
+This turborepo uses [Yarn](https://classic.yarnpkg.com/) as a package manager. It includes the following packages/apps:
 
-> *Pro version also includes Stripe, Nodemailer, AWS CDK and more. 
-  
-## 🧿 Saas Starterkit Standard 
- 
-Saas Starterkit also comes in a lite barebones version. check it out here: 
-  https://github.com/Saas-Starter-Kit/Saas-Starterkit
+### Apps and Packages
 
-## ⚙️ Installation
+- `docs`: a [Next.js](https://nextjs.org/) app
+- `web`: another [Next.js](https://nextjs.org/) app
+- `ui`: a stub React component library shared by both `web` and `docs` applications
+- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
+- `tsconfig`: `tsconfig.json`s used throughout the monorepo
 
-<strong>node version >= 14 recommended.</strong>
-<br />
-<strong>npm version >= 7 is recommended.</strong> 
+Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
-Using an older node version may lead to unexpected errors.
+### Utilities
 
-This Project Requires Firebase credentials and either Postgres or MongoDB credentials. 
-Simply substitute the credentials into the appropriate env variables in both the client and server. 
+This turborepo has some additional tools already setup for you:
 
-How to obtain the credentials from Firebase can be found in the Saas Starter Kit docs. Postgres and MongoDB credentials are user set. 
+- [TypeScript](https://www.typescriptlang.org/) for static type checking
+- [ESLint](https://eslint.org/) for code linting
+- [Prettier](https://prettier.io) for code formatting
 
-Required Environment Variables
+### Build
 
-#### Client:
+To build all apps and packages, run the following command:
 
-| Variable  | Description |
-| ------------- | ------------- |
-| NEXT_PUBLIC_SERVER_URL | URL of the nodejs Server. Will be localhost during dev. |
-| NEXT_PUBLIC_FIREBASE_API_KEY | The Firebase API key, found in the Firebase console |
-| NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN  | Firebase Auth Domain, found in the Firebase console  |
-| NEXT_PUBLIC_GOOGLE_ANALYTICS_ID | Google Analytics Measurement id |
-| NEXT_PUBLIC_STRIPE_BASIC_PLAN | Stripe plan id |
-| NEXT_PUBLIC_STRIPE_BASIC_PLAN_PRICE | Stripe price id |
-| NEXT_PUBLIC_STRIPE_BASIC_PLAN_TYPE | Human Readable plan name |
-| NEXT_PUBLIC_STRIPE_PREMIUM_PLAN | see above |
-| NEXT_PUBLIC_STRIPE_PREMIUM_PLAN_PRICE | see above |
-| NEXT_PULBIC_STRIPE_PREMIUM_PLAN_TYPE | see above |
-| NEXT_PUBLIC_STRIPE_PUBLIC_KEY | stripe public api key |
-  
+```
+cd my-turborepo
+yarn run build
+```
 
+### Develop
 
-#### Server:
+To develop all apps and packages, run the following command:
 
-| Variable  | Description |
-| ------------- | ------------- |
-| FIREBASE_DATABASE_URL | Found in Firebase Service Account Key JSON file. See docs for more info. |
-| FIREBASE_PROJECT_ID | Found in Firebase Service Account Key JSON file. See docs for more info. |
-| FIREBASE_CLIENT_EMAIL | Found in Firebase Service Account Key JSON file. See docs for more info. |
-| FIREBASE_PRIVATE_KEY | Found in Firebase Service Account Key JSON file. See docs for more info. |
-| AUTH_SECRET | User set, can be anything |
-| DB_PASSWORD | Postgres Password, user set |
-| DB_USER | Postgres username |
-| DB_HOST | Postgres host, localhost in dev |
-| DB_NAME | Name of Postgres database |
-| DB_PORT | Postgres Port, default is 5432 |
-| MONGO_URL | MongoDB URL is optional, if already using Postgres. Required if not. |
-| MAIL_TRAP_USERNAME | Mail trap username |
-| MAIL_TRAP_PASSWORD | Mail trap password |
-| STRIPE_SECRET | Stripe API secret |
-| STRIPE_ITEM_PRICE | Stripe price id |
-| STRIPE_WEBHOOK_SECRET | Stripe webhook secret |
-| SendInBlue_API_KEY | Sendinblue api key |
-| SendInBlue_User | sendinblue username |
-| SendInBlue_Password | sendinblue password |
-| SendInBlue_ListId | sendinblue listid |
-| PRODUCT_NAME |  variable in transactional emails |
-| PRODUCT_URL | variable in transactional emails |
-| COMPANY_NAME |  variable in transactional emails |
-| COMPANY_ADDRESS |  variable in transactional emails |
+```
+cd my-turborepo
+yarn run dev
+```
 
-  
-<br />
-Once the Environment Variables are defined and node modules installed the boilerplate is ready to go. 
+### Remote Caching
 
-## ✨ Features
--  ✅  Admin Dashboard
--  ✅  Full Authentication, with Google Social Login and Password Reset
--  ✅  User Profile Management with Email and Username change
--  ✅  User Dashboard
--  ✅  Checkout Pages
--  ✅  Landing and Pricing Page template
--  ✅  Decoupled Nodejs server
--  ✅  Testing Setup with Cypress and Jest
--  ✅  CRUD operations
--  ✅  Stripe subscription payments
--  ✅  Roles and permissions
--  ✅  Multi user apps and multi tenancy
--  ✅  Machine learning and AI
--  ✅  AWS infrastructure as code
--  ✅  Fully Featured Blog and Docs
--  ✅  Event Based Google Analytics
+Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
 
-## 📜 Docs 
+By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
 
-The Documentation is available here: https://docs.saasstarterkit.com/docs/Intro/Welcome
+```
+cd my-turborepo
+npx turbo login
+```
 
-If  there are any questions or something is not covered in the docs, feel free to open a github issue on this repo. 
+This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
 
-##  💻 Demo
-The Demo can be found here: https://demo.saasstarterkit.com/app/1/dashboard
+Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your turborepo:
 
-Certain Features have to be disabled or cant be included in the demo. 
+```
+npx turbo link
+```
 
+## Useful Links
 
-## 🤝 Contributing
+Learn more about the power of Turborepo:
 
-Pull requests are welcome.
-
-Also If you like this project please ⭐️ the repo to show your support.  
+- [Pipelines](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
+- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
+- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
+- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
+- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
+- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
