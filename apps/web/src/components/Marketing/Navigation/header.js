@@ -17,33 +17,20 @@ const Container = styled.div`
   align-items: center;
   padding: 1.5rem 1rem;
   height: 5rem;
-  background-color: ${colors.white};
-  @media (min-width: ${breakpoints.small}) {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-  @media (min-width: ${breakpoints.medium}) {
-    justify-content: flex-start;
-  }
   * {
     margin-right: 10px;
   }
 `;
 
 const LogoWrapper = styled.div`
-  @media (min-width: ${breakpoints.large}) {
-    width: 0;
-    flex: 1 1 0%;
-  }
+
 `;
 
 const MenuWrapper = styled.div`
   margin-right: -0.5rem;
   margin-top: -0.5rem;
   margin-bottom: -0.5rem;
-  @media (min-width: ${breakpoints.medium}) {
-    display: none;
-  }
+
 `;
 
 const MenuButton = styled.div`
@@ -52,16 +39,11 @@ const MenuButton = styled.div`
   justify-content: center;
   padding: 0.5rem;
   border-radius: 0.375rem;
-  color: ${colors.gray400};
   &:hover {
-    color: ${colors.gray500};
-    background-color: ${colors.gray100};
   }
   &:focus {
     outline: 2px solid transparent;
     outline-offset: 2px;
-    color: ${colors.gray500};
-    background-color: ${colors.gray100};
   }
 `;
 
@@ -72,11 +54,7 @@ const MenuImage = styled.img`
 
 const Nav = styled.nav`
   display: none;
-  @media (min-width: ${breakpoints.medium}) {
-    display: flex;
-    justify-content: center;
-    flex-basis: 60%;
-  }
+
 `;
 
 const SolutionsWrapper = styled.div`
@@ -100,20 +78,13 @@ const FlyoutMenuWrapper = styled.div`
 
 const ButtonWrapper = styled.div`
   display: none;
-  @media (min-width: ${breakpoints.medium}) {
-    display: flex;
-    flex: 1 1 0%;
-  }
-  @media (min-width: ${breakpoints.large}) {
-    width: 0;
-  }
+
   align-items: center;
   justify-content: flex-end;
   margin-left: 2rem;
 `;
 
 const SolutionsButton = styled.div`
-  color: ${colors.gray500};
   display: inline-flex;
   align-items: center;
   font-weight: 500;
@@ -123,10 +94,8 @@ const SolutionsButton = styled.div`
   cursor: pointer;
 
   &:hover {
-    color: ${colors.gray900};
   }
   &:focus {
-    color: ${colors.gray900};
     outline: 2px solid transparent;
     outline-offset: 2px;
   }
@@ -135,13 +104,10 @@ const SolutionsButton = styled.div`
 const StyledChevronDown = styled(ChevronDown)`
   margin-left: 8px;
   svg {
-    color: ${colors.gray500};
 
     &:hover ${SolutionsButton} {
-      color: ${colors.gray500};
     }
     &:focus ${SolutionsButton} {
-      color: ${colors.gray500};
     }
   }
 `;
@@ -216,9 +182,7 @@ const Header = () => {
     <Container>
       <LogoWrapper>
         <Link href="/">
-          <a>
             <LargeLogo />
-          </a>
         </Link>
       </LogoWrapper>
       <MenuWrapper ref={refMobile}>
@@ -247,9 +211,7 @@ const Header = () => {
       </Nav>
       <ButtonWrapper>
         <Link href="/auth/login" passHref>
-          <a>
             <Button>Sign-In</Button>
-          </a>
         </Link>
       </ButtonWrapper>
     </Container>

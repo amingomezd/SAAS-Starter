@@ -15,7 +15,6 @@ import Button from '../../../../components/Common/buttons/PrimaryButton';
 const ButtonWrapper = styled.div`
   padding-top: 2rem;
   padding-bottom: 1rem;
-  background-color: ${colors.white};
   text-align: left;
 `;
 

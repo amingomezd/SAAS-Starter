@@ -1,8 +1,8 @@
 import React, { useReducer, useEffect } from 'react';
 import { useRouter } from 'next/router';
 
-import '../styles/globals.css';
-import 'antd/dist/reset.css';
+// import '../styles/globals.css';
+// import 'antd/dist/reset.css';
 
 import AuthContext from '../utils/authContext';
 import { authReducer, initialStateAuth } from '../store/reducers/authReducer';
@@ -21,41 +21,24 @@ import { ability } from '../utils/caslAbility';
 
 import { firebaseApp as firebase } from '../services/firebase';
 import { ThemeProvider } from 'styled-components';
-import { theme } from '../styles/theme';
+import theme from '../styles/theme';
 import { pageView } from '../services/analytics';
 
 import { silentAuth } from '../utils/helpers';
+import createEmotionCache from '../styles/createEmotionCache';
+import { CacheProvider } from '@emotion/react';
+import Head from 'next/head';
+import { CssBaseline } from '@mui/material';
 
+const clientSideEmotionCache = createEmotionCache();
 const NoLayout = ({ children }) => children;
 
 function MyApp(props) {
+  const { Component, pageProps, emotionCache = clientSideEmotionCache } = props;
   const [authState, dispatchAuth] = useReducer(authReducer, initialStateAuth);
   const [apiState, dispatchApi] = useReducer(apiReducer, initialStateApi);
   const [orgState, dispatchOrg] = useReducer(orgReducer, initialStateOrg);
-
   const router = useRouter();
-
-  /* eslint-disable */
-  useEffect(() => {
-    silentAuth(LogIn, LogOut);
-  }, []);
-
-  useEffect(() => {
-    const handleRouteChange = (url) => {
-      pageView(url);
-    };
-
-    router.events.on('routeChangeComplete', handleRouteChange);
-
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange);
-    };
-  }, [router.events]);
-
-  /* eslint-enable */
-
-  const { Component, pageProps } = props;
-
   const Layout = Component.Layout || NoLayout;
 
   const LogIn = (user) => {
@@ -86,16 +69,36 @@ function MyApp(props) {
     dispatchOrg(Set_Org(payload));
   };
 
+  useEffect(() => {
+    silentAuth(LogIn, LogOut);
+  }, []);
+
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      pageView(url);
+    };
+
+    router.events.on('routeChangeComplete', handleRouteChange);
+
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
+
   return (
     <AuthContext.Provider value={{ authState, LogIn, LogOut, firebase }}>
       <ApiContext.Provider value={{ apiState, fetchFailure, fetchInit, fetchSuccess }}>
         <OrgContext.Provider value={{ SetOrg, orgState }}>
           <CaslContext.Provider value={ability}>
-            <ThemeProvider theme={theme}>
-              <Layout>
+            <CacheProvider value={emotionCache}>
+              <Head>
+                <meta name='viewport' content='initial-scale=1, width=device-width' />
+              </Head>
+              <ThemeProvider theme={theme}>
+                <CssBaseline />
                 <Component {...pageProps} />
-              </Layout>
-            </ThemeProvider>
+              </ThemeProvider>
+            </CacheProvider>
           </CaslContext.Provider>
         </OrgContext.Provider>
       </ApiContext.Provider>

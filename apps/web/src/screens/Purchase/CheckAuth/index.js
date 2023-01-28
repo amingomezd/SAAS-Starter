@@ -15,9 +15,7 @@ const CardWrapper = styled.div`
   margin-right: auto;
   margin-left: auto;
   text-align: center;
-  @media (max-width: ${breakpoints.small}) {
-    width: 90%;
-  }
+
 `;
 
 const StyledHeader = styled.h1`
@@ -31,7 +29,6 @@ const StyledSection = styled.div`
 `;
 
 const StyledLink = styled.a`
-  color: ${colors.indigo600};
 `;
 
 const CheckAuth = () => {

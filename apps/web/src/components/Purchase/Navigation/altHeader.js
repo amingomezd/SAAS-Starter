@@ -10,11 +10,6 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0.7rem;
-  background-color: ${colors.coolGray50};
-  @media (min-width: ${breakpoints.small}) {
-    margin-left: auto;
-    margin-right: auto;
-  }
 `;
 
 const Header = () => {

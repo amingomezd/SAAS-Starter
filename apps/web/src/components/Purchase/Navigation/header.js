@@ -24,7 +24,6 @@ const Wrapper = styled.div`
     > .ant-steps-item-container
     > .ant-steps-item-content
     > .ant-steps-item-title {
-    color: ${colors.gray500};
   }
 `;
 

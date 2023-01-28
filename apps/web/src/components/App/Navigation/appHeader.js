@@ -21,9 +21,6 @@ import { THEMES } from '../AppLayout';
 const { SubMenu } = Menu;
 
 const LayoutHeader = styled(Layout.Header)`
-  @media (max-width: ${breakpoints.medium}) {
-    width: 100% !important;
-  }
   padding: 0;
   box-shadow: 4px 4px 40px 0 rgba(0, 0, 0, 0.05);
   display: flex;
@@ -31,7 +28,6 @@ const LayoutHeader = styled(Layout.Header)`
   height: 72px;
   z-index: 9;
   align-items: center;
-  background-color: ${colors.white};
   transition: width 0.2s;
 
   .ant-menu-submenu-title {
@@ -42,7 +38,6 @@ const LayoutHeader = styled(Layout.Header)`
     line-height: 72px;
 
     & > .ant-menu-submenu:hover {
-      color: ${colors.dodgerBlue};
       background-color: ${({ theme }) => (theme === THEMES.DARK ? colors.firefly : colors.whisper)};
     }
   }
@@ -75,7 +70,6 @@ const LayoutHeader = styled(Layout.Header)`
   ${({ theme }) =>
     theme === THEMES.DARK &&
     css`
-      background-color: ${colors.midnight};
     `}
 `;
 
@@ -90,7 +84,6 @@ const CollapseButton = styled.div`
   color: ${({ theme }) => (theme === THEMES.DARK ? colors.white : colors.doveGray)};
 
   &:hover {
-    color: ${colors.dodgerBlue};
     background-color: ${({ theme }) => (theme === THEMES.DARK ? colors.firefly : colors.whisper)};
   }
 `;
@@ -146,7 +139,6 @@ const NotificationItem = styled(List.Item)`
 
 const StyledRightOutlined = styled(RightOutlined)`
   font-size: 10px;
-  color: ${colors.silver};
 `;
 
 const IconButton = styled(Badge)`
@@ -164,10 +156,8 @@ const IconButton = styled(Badge)`
 `;
 
 const IconFont = styled(IoNotificationsOutline)`
-  color: ${colors.cadetBlue};
   font-size: 24px;
   &:hover {
-    color: ${colors.dodgerBlue};
   }
 `;
 
@@ -257,12 +247,12 @@ const AppHeader = ({
               </Menu.Item>
               <Menu.Item icon={<UserOutlined />} key="user">
                 <Link href="/user/dashboard">
-                  <a>User Dashboard</a>
+                  User Dashboard
                 </Link>
               </Menu.Item>
               <Menu.Item icon={<SettingOutlined />} key="settings">
                 <Link href="/user/settings/account">
-                  <a>Settings</a>
+                  Settings
                 </Link>
               </Menu.Item>
               <Menu.Item icon={<LogoutOutlined />} onClick={logout} key="SignOut">

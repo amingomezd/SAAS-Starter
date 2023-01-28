@@ -16,14 +16,9 @@ import Card from '../../../components/Common/Card';
 
 const Wrapper = styled.div`
   display: flex;
-  background-color: ${colors.gray50};
   min-height: 100vh;
   margin-top: 2rem;
-
-  @media (max-width: ${breakpoints.small}) {
-    flex-direction: column;
-    align-items: center;
-  }
+  
 `;
 
 const PaymentConfirm = styled.div`
@@ -34,11 +29,7 @@ const PaymentConfirm = styled.div`
   padding: 1rem;
   padding-bottom: 2rem;
 
-  @media (max-width: ${breakpoints.small}) {
-    flex-direction: column;
-    margin: 1rem;
-    width: 90%;
-  }
+
 `;
 
 const PaymentInfo = styled.div`
@@ -48,16 +39,12 @@ const PaymentInfo = styled.div`
   width: 70%;
   height: max-content;
   padding: 1rem;
-  @media (max-width: ${breakpoints.small}) {
-    margin: 1rem;
-    width: 90%;
-  }
+
 `;
 
 const ButtonWrapper = styled.div`
   padding-top: 2rem;
   padding-bottom: 1rem;
-  background-color: ${colors.white};
   text-align: left;
 `;
 

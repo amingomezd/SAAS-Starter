@@ -10,10 +10,15 @@
     "cypress": "cypress open"
   },
   "dependencies": {
-    "ui": "*",
     "@ant-design/icons": "^4.8.0",
     "@casl/ability": "^6.3.3",
     "@casl/react": "^3.1.0",
+    "@emotion/cache": "^11.10.5",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.11.0",
+    "@mui/material": "^5.11.6",
+    "@next/font": "^13.1.6",
     "@stripe/react-stripe-js": "^1.16.2",
     "@stripe/stripe-js": "^1.46.0",
     "antd": "^5.1.2",
@@ -25,11 +30,11 @@
     "lodash": "^4.17.21",
     "lottie-react": "^2.3.1",
     "moment": "^2.29.4",
-    "next": "^12.3.4",
+    "next": "^13.1.6",
     "qs": "^6.11.0",
-    "react": "^17.0.2",
+    "react": "^18.2.0",
     "react-countup": "^6.4.0",
-    "react-dom": "^17.0.2",
+    "react-dom": "^18.2.0",
     "react-google-button": "^0.7.2",
     "react-headroom": "^3.2.1",
     "react-icons": "^4.7.1",
@@ -38,6 +43,7 @@
     "reactour": "^1.19.0",
     "recharts": "^2.2.0",
     "styled-components": "^5.3.6",
+    "ui": "*",
     "yup": "^0.32.11"
   },
   "devDependencies": {
@@ -45,9 +51,9 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "babel-jest": "^29.3.1",
-    "eslint-config-custom": "*",
     "babel-plugin-styled-components": "^2.0.7",
     "cypress": "^12.3.0",
+    "eslint-config-custom": "*",
     "jest": "^29.3.1",
     "prettier": "^2.8.2"
   }

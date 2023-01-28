@@ -10,15 +10,9 @@ const Wrapper = styled.div`
   padding: 1rem 0.5rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  color: ${colors.indigo300};
-  line-height: 1.25rem;
   &:hover {
-    color: ${colors.white};
-    background-color: ${colors.indigo700};
   }
   &:focus {
-    color: ${colors.white};
-    background-color: ${colors.indigo700};
     outline: 2px solid transparent;
     outline-offset: 2px;
   }
@@ -30,12 +24,10 @@ const SvgWrapper = styled.div`
 
 const MobileSidebarItem = ({ link, toggleMenu, svg, title }) => (
   <Link href={link}>
-    <a>
       <Wrapper onClick={toggleMenu}>
         <SvgWrapper>{svg}</SvgWrapper>
         {title}
       </Wrapper>
-    </a>
   </Link>
 );
 

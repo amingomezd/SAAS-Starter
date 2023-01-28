@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { colors } from '../../../styles/theme';
 
 const Svg = styled.svg`
-  color: ${colors.indigo400};
   height: 1.5rem;
   width: 1.5rem;
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow,
@@ -11,7 +10,6 @@ const Svg = styled.svg`
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
   &:hover {
-    color: ${colors.indigo300};
   }
 `;
 

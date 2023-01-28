@@ -18,19 +18,11 @@ import FieldLabel from '../../../components/Common/forms/FieldLabel';
 import TextInput from '../../../components/Common/forms/TextInput';
 
 const Wrapper = styled.div`
-  background-color: ${colors.gray50};
   min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  @media (min-width: ${breakpoints.small}) {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-  @media (min-width: ${breakpoints.large}) {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
+
 `;
 
 const Title = styled(TitleBase)`
@@ -196,7 +188,7 @@ const ConfirmedEmail = () => {
                 <CardText>Click below to navigate to the app your were invited to</CardText>
                 <TextWrapper>
                   <Link href={`/app/${org_id}/dashboard`}>
-                    <a>Go to App</a>
+                    Go to App
                   </Link>
                 </TextWrapper>
               </div>

@@ -8,7 +8,6 @@ const Wrapper1 = styled.div`
   height: 100vh;
   display: flex;
   overflow: hidden;
-  background-color: ${colors.coolGray100};
 `
 
 const Wrapper2 = styled.div`
@@ -37,7 +36,6 @@ const Title = styled.h2`
   font-size: 1.125rem;
   line-height: 1.5rem;
   font-weight: 500;
-  color: ${colors.coolGray900};
 `
 
 const ActivityList = () => (

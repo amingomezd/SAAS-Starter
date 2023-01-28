@@ -19,10 +19,7 @@ const LargeHeader = styled.h3`
   font-weight: 800;
   letter-spacing: -0.025em;
 
-  @media (min-width: ${breakpoints.small}) {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-  }
+
 `;
 
 const SectionDescription = styled.p`
@@ -41,30 +38,14 @@ const ContentWrapper = styled.div`
   margin-right: auto;
   padding-left: 1rem;
   padding-right: 1rem;
-  @media (min-width: ${breakpoints.small}) {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-  @media (min-width: ${breakpoints.large}) {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-gap: 2rem;
-    gap: 2rem;
-    max-width: 1280px;
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
 `;
 
 const Column = styled.div`
   margin-top: 2.5rem;
-  @media (min-width: ${breakpoints.large}) {
-    margin-top: 0;
-  }
+
 `;
 
 const IconWrapper = styled.div`
-  background-color: ${colors.indigo500};
   border-radius: 0.375rem;
   height: 3rem;
   width: 3rem;

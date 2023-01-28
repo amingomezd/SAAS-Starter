@@ -20,7 +20,6 @@ const Container = styled.div`
   border-radius: 0.5rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   border: 1.5px black solid;
-  background-color: ${colors.white};
   padding: 1.5rem 1.25rem;
   min-width: 28rem;
 `;
@@ -33,7 +32,6 @@ const Item = styled.div`
   padding: 0.2rem;
 
   &:hover {
-    background-color: ${colors.gray50};
   }
 `;
 
@@ -44,8 +42,6 @@ const MenuImageWrapper = styled.div`
   height: 3rem;
   width: 3rem;
   border-radius: 0.375rem;
-  background-color: ${colors.indigo500};
-  color: ${colors.white};
 `;
 
 const TextWrapper = styled.div`
@@ -55,12 +51,10 @@ const TextWrapper = styled.div`
 const Title = styled.div`
   font-size: 1rem;
   font-weight: 500;
-  color: ${colors.gray900};
 `;
 
 const Description = styled.div`
   font-size: 0.875rem;
-  color: ${colors.gray500};
 `;
 
 const StyledIconBullish = styled(FcBullish)`
@@ -109,7 +103,6 @@ const StyledHr = styled.hr`
 const FlyoutMenu = () => (
   <Container>
     <Link href="/pricing">
-      <a>
         <Item>
           <MenuImageWrapper>
             <StyledPrice />
@@ -119,11 +112,9 @@ const FlyoutMenu = () => (
             <Description>Lorem ipsum dolor sit amet, consectetur </Description>
           </TextWrapper>
         </Item>
-      </a>
     </Link>
     <StyledHr />
     <Link href="/product/page1">
-      <a>
         <Item>
           <MenuImageWrapper>
             <StyledIconBullish />
@@ -133,10 +124,8 @@ const FlyoutMenu = () => (
             <Description>Lorem ipsum dolor sit amet, consectetur </Description>
           </TextWrapper>
         </Item>
-      </a>
     </Link>
     <Link href="/product/page2">
-      <a>
         <Item>
           <MenuImageWrapper>
             <StyledIconInvite />
@@ -146,10 +135,8 @@ const FlyoutMenu = () => (
             <Description>Lorem ipsum dolor sit amet, consectetur </Description>
           </TextWrapper>
         </Item>
-      </a>
     </Link>
     <Link href="/product/page3">
-      <a>
         <Item>
           <MenuImageWrapper>
             <StyledIconTasks />
@@ -159,10 +146,8 @@ const FlyoutMenu = () => (
             <Description>Lorem ipsum dolor sit amet, consectetur </Description>
           </TextWrapper>
         </Item>
-      </a>
     </Link>
     <Link href="/product/page4">
-      <a>
         <Item>
           <MenuImageWrapper>
             <StyledTimeline />
@@ -172,7 +157,6 @@ const FlyoutMenu = () => (
             <Description>Lorem ipsum dolor sit amet, consectetur</Description>
           </TextWrapper>
         </Item>
-      </a>
     </Link>
   </Container>
 );

@@ -23,16 +23,7 @@ const Container = styled.div`
   margin-left: auto;
   margin-right: auto;
   padding: 4rem 1rem 4rem 1rem;
-
-  @media (min-width: ${breakpoints.small}) {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-  @media (min-width: ${breakpoints.large}) {
-    padding: 6rem 2rem 6rem 2rem;
-    margin-top: -8rem;
-    max-width: 1280px;
-  }
+  
 `;
 
 const LargeHeader = styled.h2`
@@ -40,10 +31,6 @@ const LargeHeader = styled.h2`
   line-height: 2rem;
   font-weight: 800;
   text-align: center;
-  @media (min-width: ${breakpoints.small}) {
-    font-size: 1.875rem;
-    text-align: left;
-  }
 `;
 
 const LargeParagraph = styled.p`
@@ -51,9 +38,7 @@ const LargeParagraph = styled.p`
   font-size: 1.125rem;
   line-height: 1.75rem;
   text-align: center;
-  @media (min-width: ${breakpoints.small}) {
-    text-align: left;
-  }
+
 `;
 
 const TextWrapper = styled.div`
@@ -64,57 +49,30 @@ const SmallHeader = styled.h3`
   font-size: 1.125rem;
   line-height: 1.5rem;
   font-weight: 500;
-  color: ${colors.gray900};
 `;
 
 const SmallParagraph = styled.p`
   margin-top: 0.5rem;
   font-size: 1rem;
   line-height: 1.5rem;
-  color: ${colors.gray500};
 `;
 
 const FeatureWrapper1 = styled.div`
   margin-top: 3rem;
-  @media (min-width: ${breakpoints.large}) {
-    margin-top: 6rem;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-gap: 2rem;
-    gap: 2rem;
-    align-items: center;
-  }
 `;
 
 const FeatureWrapper2 = styled.div`
   margin-top: 3rem;
-  @media (min-width: ${breakpoints.small}) {
-    margin-top: 4rem;
-  }
-  @media (min-width: ${breakpoints.large}) {
-    display: grid;
-    grid-auto-flow: row dense;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-gap: 2rem;
-    gap: 2rem;
-    align-items: center;
-    margin-top: 6rem;
-  }
 `;
 
 const FeatureWrapper2b = styled.div`
-  @media (min-width: ${breakpoints.large}) {
-    grid-column-start: 2;
-  }
+
 `;
 
 const List = styled.ul`
   margin-top: 2.5rem;
   margin-left: -1rem;
   list-style-type: none;
-  @media (min-width: ${breakpoints.small}) {
-    margin-left: 0;
-  }
 `;
 
 const ListItem = styled.li`
@@ -133,8 +91,6 @@ const ImageWrapper = styled.div`
   height: 3rem;
   width: 3rem;
   border-radius: 0.375rem;
-  color: ${colors.white};
-  background-color: ${colors.indigo500};
 `;
 
 const StyledApproval = styled(FcApproval)`

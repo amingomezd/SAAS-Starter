@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { colors } from '../../../styles/theme';
 
 const Svg = styled.svg`
-  color: ${colors.green500};
   height: 1.5rem;
   width: 1.5rem;
 `;

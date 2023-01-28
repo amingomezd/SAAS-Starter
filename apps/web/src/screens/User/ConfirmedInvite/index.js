@@ -16,12 +16,7 @@ import Card from '../../../components/Common/Card';
 const Wrapper = styled.div`
   text-align: center;
   padding-top: 3rem;
-  @media (min-width: ${breakpoints.small}) {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    max-width: 38rem;
-  }
+
 `;
 
 const StyledCard = styled(Card)`
@@ -102,9 +97,7 @@ const ConfirmedInvite = () => {
             Your invite to the app has been confirmed, click below to navigate to the app
           </Title>
           <Link legacyBehavior href={`/app/${org_id}/dashboard`}>
-            <a>
               <ConfirmButton>Go to App</ConfirmButton>
-            </a>
           </Link>
         </StyledCard>
       </Wrapper>

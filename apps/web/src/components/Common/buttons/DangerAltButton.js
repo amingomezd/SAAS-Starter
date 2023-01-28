@@ -3,7 +3,6 @@ import { colors } from '../../../styles/theme';
 
 const DangerAltButton = styled.button`
   position: relative;
-  color: ${colors.white};
   background-color: #c62828;
   padding: 0.5rem 1rem 0.5rem 1rem;
   font-weight: 600;

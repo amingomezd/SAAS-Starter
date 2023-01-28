@@ -29,7 +29,6 @@ const TextAreaWrapper = styled.div`
 
 const ButtonWrapper = styled.div`
   padding: 1.5rem;
-  background-color: ${colors.white};
   text-align: left;
 `;
 

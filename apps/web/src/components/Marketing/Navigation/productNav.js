@@ -7,10 +7,6 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  @media (min-width: ${breakpoints.small}) {
-    display: block;
-    margin-left: 2rem;
-  }
 `;
 
 const Title = styled.h1`
