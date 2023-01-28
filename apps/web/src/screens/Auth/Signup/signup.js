@@ -150,6 +150,7 @@ const Signup = () => {
                       label="Password"
                       variant="outlined"
                       name="password"
+                      type='password'
                       data-test-id="password"
                       onChange={handleChange}
                       onBlur={handleBlur}

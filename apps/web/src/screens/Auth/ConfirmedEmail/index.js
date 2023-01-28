@@ -150,32 +150,36 @@ const ConfirmedEmail = () => {
           Thank You for confirming your email, your account is almost ready to use
         </Typography>
 
-        {loadingSpin && (
-          <Stack pt={2}>
+        <Stack pt={2}>
+          {loadingSpin && (
             <Stack direction="row" spacing={2} py={2} justifyContent="center">
               <CircularProgress size={20} />
               <Typography>Please wait while we setup your account...</Typography>
             </Stack>
+          )}
 
-            <Card variant="outlined">
-              {isInviteFlow === true ? (
-                <CardContent>
-                  <Typography variant="subtitle1">Click below to navigate to the app your were invited to</Typography>
-                  <Box textAlign='center'><Link component={NextLink} href={`/app/${org_id}/dashboard`}>Go to App</Link></Box>
-                </CardContent>
-              ) : (
-                <CardContent>
-                  <Typography variant="subtitle1">Enter an Organization Name to get Started</Typography>
-                  <Box pt={2}>
-                    <form onSubmit={handleSubmit}>
-                      <TextField fullWidth id="org_name" label="Organization Name" variant="outlined" name="org_name" />
-                    </form>
-                  </Box>
-                </CardContent>
-              )}
-            </Card>
-          </Stack>
-        )}
+          <Card variant="outlined">
+            {isInviteFlow === true ? (
+              <CardContent>
+                <Typography variant="subtitle1">Click below to navigate to the app your were invited to</Typography>
+                <Box textAlign="center">
+                  <Link component={NextLink} href={`/app/${org_id}/dashboard`}>
+                    Go to App
+                  </Link>
+                </Box>
+              </CardContent>
+            ) : (
+              <CardContent>
+                <Typography variant="subtitle1">Enter an Organization Name to get Started</Typography>
+                <Box pt={2}>
+                  <form onSubmit={handleSubmit}>
+                    <TextField fullWidth id="org_name" label="Organization Name" variant="outlined" name="org_name" />
+                  </form>
+                </Box>
+              </CardContent>
+            )}
+          </Card>
+        </Stack>
       </Container>
     </>
   );
