@@ -1,44 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react';
-import Link from 'next/link';
+import NextLink from 'next/link';
 import { useRouter } from 'next/router';
-import styled from 'styled-components';
 
-import { Spin } from 'antd';
 import SEO from '../../../components/Marketing/Layout/seo';
 import AuthContext from '../../../utils/authContext';
 import ApiContext from '../../../utils/apiContext';
 import axios from '../../../services/axios';
 import { setAnalyticsUserId, sendEventToAnalytics } from '../../../services/analytics';
-import { colors, breakpoints } from '../../../styles/theme';
 
-import TitleBase from '../../../components/Auth/title';
-import AuthCard from '../../../components/Auth/authCard';
-import LoadingOverlay from '../../../components/Common/loadingOverlay';
-import FieldLabel from '../../../components/Common/forms/FieldLabel';
-import TextInput from '../../../components/Common/forms/TextInput';
-
-const Wrapper = styled.div`
-  min-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-`;
-
-const Title = styled(TitleBase)`
-  margin-bottom: 1rem;
-`;
-
-const TextWrapper = styled.div`
-  text-align: center;
-  font-size: 1.075rem;
-`;
-
-const CardText = styled.div`
-  font-size: 1.075rem;
-  font-weight: 500;
-  padding-top: 1.5rem;
-`;
+import { Box, Card, CardContent, CircularProgress, Container, Link, Stack, TextField, Typography } from '@mui/material';
 
 const ConfirmedEmail = () => {
   const location = useRouter();
@@ -57,24 +27,6 @@ const ConfirmedEmail = () => {
   const [verify_key, setVerifyKey] = useState();
   const [isInviteFlow, setInviteFlow] = useState();
   const [invite_key, setInviteKey] = useState();
-
-  /* eslint-disable */
-  useEffect(() => {
-    if (!location.isReady) return;
-
-    setVerifyKey(location.query.key);
-    setInviteFlow(location.query.isInviteFlow);
-    setInviteKey(location.query.invite_key);
-
-    console.log(verify_key, isInviteFlow, invite_key);
-    if (verify_key) createUser();
-  }, [location.isReady, verify_key, invite_key, isInviteFlow]);
-
-  useEffect(() => {
-    return () => setLoading(false);
-  }, []);
-
-  /* eslint-enable */
 
   const createUser = async () => {
     fetchInit();
@@ -111,9 +63,7 @@ const ConfirmedEmail = () => {
   const verifyInvite = async (user_id) => {
     //verify invite key, returing org id.
     let data = { invite_key };
-    let result = await axios
-      .post('/api/users/verify-invite', data)
-      .catch((err) => fetchFailure(err));
+    let result = await axios.post('/api/users/verify-invite', data).catch((err) => fetchFailure(err));
 
     console.log(result);
     let org_id = result.data.org_id;
@@ -170,43 +120,64 @@ const ConfirmedEmail = () => {
     location.push('/user/dashboard');
   };
 
+  useEffect(() => {
+    if (!location.isReady) return;
+
+    setVerifyKey(location.query.key);
+    setInviteFlow(location.query.isInviteFlow);
+    setInviteKey(location.query.invite_key);
+
+    console.log(verify_key, isInviteFlow, invite_key);
+    if (verify_key) createUser();
+  }, [location.isReady, verify_key, invite_key, isInviteFlow]);
+
+  useEffect(() => {
+    return () => setLoading(false);
+  }, []);
+
   const seoData = {
     title: 'Saas Starter Kit Pro Email Confirmed Page',
     description: 'Saas Starter Kit Pro Email Confirmed Page'
   };
 
   return (
-    <React.Fragment>
+    <>
       <SEO seoData={seoData} />
-      <Wrapper>
-        {isLoading && <LoadingOverlay />}
-        <Title>Thank You for confirming your email, your account is almost ready to use</Title>
-        <Spin tip="Please wait while we setup your account..." spinning={loadingSpin}>
-          <AuthCard>
-            {isInviteFlow === 'true' ? (
-              <div>
-                <CardText>Click below to navigate to the app your were invited to</CardText>
-                <TextWrapper>
-                  <Link href={`/app/${org_id}/dashboard`}>
-                    Go to App
-                  </Link>
-                </TextWrapper>
-              </div>
-            ) : (
-              <div>
-                <h2>Enter an Organization Name to get Started</h2>
-                <form onSubmit={handleSubmit}>
-                  <FieldLabel htmlFor="org_name">
-                    Organization Name:
-                    <TextInput id="org_name" />
-                  </FieldLabel>
-                </form>
-              </div>
-            )}
-          </AuthCard>
-        </Spin>
-      </Wrapper>
-    </React.Fragment>
+
+      <Container maxWidth="xs">
+        {isLoading && <CircularProgress />}
+        <Typography variant="h5" fontWeight="bold" align="center">
+          Thank You for confirming your email, your account is almost ready to use
+        </Typography>
+
+        {loadingSpin && (
+          <Stack pt={2}>
+            <Stack direction="row" spacing={2} py={2} justifyContent="center">
+              <CircularProgress size={20} />
+              <Typography>Please wait while we setup your account...</Typography>
+            </Stack>
+
+            <Card variant="outlined">
+              {isInviteFlow === true ? (
+                <CardContent>
+                  <Typography variant="subtitle1">Click below to navigate to the app your were invited to</Typography>
+                  <Box textAlign='center'><Link component={NextLink} href={`/app/${org_id}/dashboard`}>Go to App</Link></Box>
+                </CardContent>
+              ) : (
+                <CardContent>
+                  <Typography variant="subtitle1">Enter an Organization Name to get Started</Typography>
+                  <Box pt={2}>
+                    <form onSubmit={handleSubmit}>
+                      <TextField fullWidth id="org_name" label="Organization Name" variant="outlined" name="org_name" />
+                    </form>
+                  </Box>
+                </CardContent>
+              )}
+            </Card>
+          </Stack>
+        )}
+      </Container>
+    </>
   );
 };
 

@@ -8,12 +8,10 @@ import ApiContext from '../../../utils/apiContext';
 import { LoginAuth } from '../helpers';
 
 import SEO from '../../../components/Marketing/Layout/seo';
-import ErrorText from '../../../components/Common/errorText';
 
 import {
   Box,
-  Button,
-  CardActions,
+  Button, Card,
   CardContent,
   Checkbox,
   CircularProgress,
@@ -25,7 +23,6 @@ import {
   TextField,
   Typography
 } from '@mui/material';
-import { Card } from 'antd';
 import GoogleButton from 'react-google-button';
 
 const Login = () => {
@@ -113,8 +110,10 @@ const Login = () => {
                       onChange={handleChange}
                       onBlur={handleBlur}
                       value={values.email}
+                      helperText= {errors.email}
+                      error={touched.email && Boolean(errors.email)}
                     />
-                    {errors.email && touched.email && <ErrorText>{errors.email}</ErrorText>}
+
                     <TextField
                       fullWidth
                       id="password"
@@ -125,8 +124,9 @@ const Login = () => {
                       onChange={handleChange}
                       onBlur={handleBlur}
                       value={values.password}
+                      helperText= {errors.password}
+                      error={touched.password && Boolean(errors.password)}
                     />
-                    {errors.password && touched.password && <ErrorText>{errors.password}</ErrorText>}
 
                     <Button type="submit" variant="contained">
                       Sign In
@@ -135,20 +135,19 @@ const Login = () => {
                 </form>
               )}
             </Formik>
+
+            <Stack direction='row' justifyContent='space-between' alignItems='center'>
+              <FormControlLabel control={<Checkbox id="remember_me" name="remember_me" />} label="Remember me" />
+              <Link component={NextLink} href="/auth/passwordreset">
+                Forgot your password?
+              </Link>
+            </Stack>
+
+            <Stack spacing={2} alignItems='center' pt={2}>
+              <Divider sx={{width: '100%'}}>Or Continue With</Divider>
+              <GoogleButton label="Sign-In with Google" onClick={GoogleSignin} />
+            </Stack>
           </CardContent>
-
-          <CardActions>
-            <FormControlLabel control={<Checkbox id="remember_me" name="remember_me" />} label="Remember me" />
-
-            <Link component={NextLink} href="/auth/passwordreset">
-              Forgot your password?
-            </Link>
-          </CardActions>
-
-          <Stack spacing={2} alignItems='center'>
-            <Divider sx={{width: '100%'}}>Or Continue With</Divider>
-            <GoogleButton label="Sign-Up with Google" onClick={GoogleSignin} />
-          </Stack>
         </Card>
       </Container>
     </>

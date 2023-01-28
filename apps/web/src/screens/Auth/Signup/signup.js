@@ -7,16 +7,19 @@ import ApiContext from '../../../utils/apiContext';
 import { ValidSchema, SignupAuth } from '../helpers';
 
 import SEO from '../../../components/Marketing/Layout/seo';
-import ErrorText from '../../../components/Common/errorText';
-import InputWrapper from '../../../components/Common/forms/TextInputWrapper';
-import Button from '../../../components/Auth/Buttons/authButton';
-import AuthCard from '../../../components/Auth/authCard';
-import Label from '../../../components/Auth/authFormLabel';
-import Input from '../../../components/Common/forms/TextInput';
-import ContinueWith from '../../../components/Auth/continueWith';
-import GoogleButton from '../../../components/Auth/Buttons/googleButton';
-import LoadingOverlay from '../../../components/Common/loadingOverlay';
-import SignUpFormHeader from './signupFormHeader';
+import {
+  Box,
+  Button,
+  Card,
+  CardContent, CircularProgress,
+  Container, Divider,
+  Link,
+  Stack,
+  TextField,
+  Typography
+} from '@mui/material';
+import NextLink from 'next/link';
+import GoogleButton from 'react-google-button';
 
 // TODO: replace with actual data
 const getData = () => ({
@@ -37,19 +40,6 @@ const Signup = () => {
   const [invite_key, setInviteKey] = useState();
   const [isInviteFlow, setInviteFlow] = useState();
 
-  /* eslint-disable */
-  //extract data from query params
-  useEffect(() => {
-    if (!location.isReady) return;
-    setInviteFlow(location.query.isInviteFlow);
-    setInviteKey(location.query.verify_key);
-  }, [location.isReady]);
-
-  useEffect(() => {
-    return () => fetchSuccess();
-  }, []);
-  /* eslint-disable */
-
   const handleSubmit = async (values) => {
     fetchInit();
 
@@ -64,16 +54,7 @@ const Signup = () => {
         fetchFailure(error);
       });
 
-    SignupAuth(
-      authRes,
-      firebase,
-      fetchFailure,
-      username,
-      domainUrl,
-      isInviteFlow,
-      invite_key,
-      location
-    );
+    SignupAuth(authRes, firebase, fetchFailure, username, domainUrl, isInviteFlow, invite_key, location);
   };
 
   //Google OAuth2 Signin
@@ -89,17 +70,19 @@ const Signup = () => {
         fetchFailure(error);
       });
 
-    SignupAuth(
-      authRes,
-      firebase,
-      fetchFailure,
-      null,
-      domainUrl,
-      isInviteFlow,
-      invite_key,
-      location
-    );
+    SignupAuth(authRes, firebase, fetchFailure, null, domainUrl, isInviteFlow, invite_key, location);
   };
+
+  //extract data from query params
+  useEffect(() => {
+    if (!location.isReady) return;
+    setInviteFlow(location.query.isInviteFlow);
+    setInviteKey(location.query.verify_key);
+  }, [location.isReady]);
+
+  useEffect(() => {
+    return () => fetchSuccess();
+  }, []);
 
   const seoData = {
     title: 'Saas Starter Kit Pro Sign up Page',
@@ -107,69 +90,90 @@ const Signup = () => {
   };
 
   return (
-    <React.Fragment>
+    <>
       <SEO seoData={seoData} />
-      <div>
-        {isLoading && <LoadingOverlay />}
-        <SignUpFormHeader />
 
-        <AuthCard>
-          <Formik
-            validationSchema={ValidSchema}
-            initialValues={{ email: '', password: '', username: '' }}
-            onSubmit={handleSubmit}
-          >
-            {({ values, errors, touched, handleChange, handleBlur, handleSubmit }) => (
-              <form onSubmit={handleSubmit}>
-                <Label htmlFor="email">Email:</Label>
-                <InputWrapper>
-                  <Input
-                    type="email"
-                    name="email"
-                    id="email"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.email}
-                    data-test-id="email"
-                  />
-                </InputWrapper>
-                {errors.email && touched.email && <ErrorText>{errors.email}</ErrorText>}
-                <Label htmlFor="username">First and Last Name:</Label>
-                <InputWrapper>
-                  <Input
-                    type="text"
-                    name="username"
-                    id="username"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.username}
-                    data-test-id="username"
-                  />
-                </InputWrapper>
-                {errors.username && touched.username && <ErrorText>{errors.username}</ErrorText>}
-                <Label htmlFor="password">Password:</Label>
-                <InputWrapper>
-                  <Input
-                    type="password"
-                    name="password"
-                    id="password"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.password}
-                    data-test-id="password"
-                  />
-                </InputWrapper>
-                {errors.password && touched.password && <ErrorText>{errors.password}</ErrorText>}
-                <Button type="submit">SignUp</Button>
-              </form>
-            )}
-          </Formik>
+      <Container maxWidth="xs">
+        {isLoading && <CircularProgress />}
+        <Box textAlign="center" py={5}>
+          <Typography variant="h4" fontWeight="bold">
+            Sign-Up for an Account
+          </Typography>
+          <Link component={NextLink} href="/auth/login">
+            Already Have an Account? Login here
+          </Link>
+        </Box>
 
-          <ContinueWith />
-          <GoogleButton GoogleSignin={GoogleSignin} />
-        </AuthCard>
-      </div>
-    </React.Fragment>
+        <Card variant="outlined">
+          <CardContent>
+            <Formik
+              validationSchema={ValidSchema}
+              initialValues={{ email: '', password: '', username: '' }}
+              onSubmit={handleSubmit}
+            >
+              {({ values, errors, touched, handleChange, handleBlur, handleSubmit }) => (
+                <form onSubmit={handleSubmit}>
+                  <Stack spacing={2}>
+                    <TextField
+                      fullWidth
+                      id="email"
+                      label="Email"
+                      variant="outlined"
+                      type="email"
+                      name="email"
+                      data-test-id="email"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.email}
+                      helperText= {errors.email}
+                      error={touched.email && Boolean(errors.email)}
+                    />
+
+                    <TextField
+                      fullWidth
+                      id="username"
+                      label="First and Last Name:"
+                      variant="outlined"
+                      name="username"
+                      data-test-id="username"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.username}
+                      helperText= {errors.username}
+                      error={touched.username && Boolean(errors.username)}
+
+                    />
+
+                    <TextField
+                      fullWidth
+                      id="password"
+                      label="Password"
+                      variant="outlined"
+                      name="password"
+                      data-test-id="password"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.password}
+                      helperText= {errors.password}
+                      error={touched.password && Boolean(errors.password)}
+                    />
+
+                    <Button type="submit" variant="contained">
+                      Sign In
+                    </Button>
+                  </Stack>
+                </form>
+              )}
+            </Formik>
+
+            <Stack spacing={2} alignItems='center' pt={3}>
+              <Divider sx={{width: '100%'}}>Or Continue With</Divider>
+              <GoogleButton label="Sign-Up with Google" onClick={GoogleSignin} />
+            </Stack>
+          </CardContent>
+        </Card>
+      </Container>
+    </>
   );
 };
 

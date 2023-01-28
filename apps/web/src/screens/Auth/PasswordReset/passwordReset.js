@@ -1,26 +1,19 @@
 import React, { useContext, useState } from 'react';
-import styled from 'styled-components';
 
 import AuthContext from '../../../utils/authContext';
-import { colors, breakpoints } from '../../../styles/theme';
 import ApiContext from '../../../utils/apiContext';
 
 import SEO from '../../../components/Marketing/Layout/seo';
-import LoadingOverlay from '../../../components/Common/loadingOverlay';
-import ResetFormHeader from './resetFormHeader';
-import ResetSuccess from './resetSuccessMessage';
-import AuthCard from '../../../components/Auth/authCard';
-import Button from '../../../components/Auth/Buttons/authButton';
-import Input from '../../../components/Common/forms/TextInput';
-import Label from '../../../components/Auth/authFormLabel';
-import InputWrapper from '../../../components/Common/forms/TextInputWrapper';
-
-const Wrapper = styled.div`
-  min-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-`;
+import {
+  Button,
+  Card,
+  CardContent,
+  CircularProgress,
+  Container,
+  Stack,
+  TextField,
+  Typography
+} from '@mui/material';
 
 const PasswordReset = () => {
   const { firebase } = useContext(AuthContext);
@@ -51,28 +44,35 @@ const PasswordReset = () => {
   };
 
   return (
-    <React.Fragment>
+    <>
       <SEO seoData={seoData} />
-      <Wrapper>
-        {isLoading && <LoadingOverlay />}
+
+      <Container maxWidth="xs">
+        {isLoading && <CircularProgress />}
         {!success ? (
-          <div>
-            <ResetFormHeader />
-            <AuthCard>
-              <form onSubmit={handleSubmit}>
-                <Label htmlFor="email">Email:</Label>
-                <InputWrapper>
-                  <Input type="email" name="email" id="email" />
-                </InputWrapper>
-                <Button type="submit">Submit</Button>
-              </form>
-            </AuthCard>
-          </div>
+          <>
+            <Typography variant="h4" fontWeight="bold" textAlign="center" py={5}>
+              Enter In Email to reset Password
+            </Typography>
+
+            <Card variant="outlined">
+              <CardContent>
+                <form onSubmit={handleSubmit}>
+                  <Stack spacing={2}>
+                    <TextField fullWidth id="email" label="Email" variant="outlined" type="email" name="email" />
+                    <Button variant="contained" type="submit">
+                      Submit
+                    </Button>
+                  </Stack>
+                </form>
+              </CardContent>
+            </Card>
+          </>
         ) : (
-          <ResetSuccess />
+          <Typography variant='h5'>A Reset Link Has been Sent to your Email</Typography>
         )}
-      </Wrapper>
-    </React.Fragment>
+      </Container>
+    </>
   );
 };
 
