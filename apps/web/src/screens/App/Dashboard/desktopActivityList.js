@@ -19,6 +19,10 @@ const Table = styled.table`
   min-width: 100%;
 `;
 
+const TableBody = styled.table`
+  min-width: 100%;
+`;
+
 const ThBase = styled.th`
   padding: 0.75rem 1.5rem;
   font-weight: medium;

@@ -49,8 +49,8 @@ const Stats = () => (
           svg={<StyledArrowUp />}
           diffDescription="Increased by"
           diff="12%"
-          pillColor={colors.green100}
-          pillTextColor={colors.green800}
+          pillColor={colors?.green100}
+          pillTextColor={colors?.green800}
         />
       </div>
       <BorderDiv>
@@ -60,8 +60,8 @@ const Stats = () => (
           svg={<StyledArrowUp />}
           diffDescription="Increased by"
           diff="2.02%"
-          pillColor={colors.green100}
-          pillTextColor={colors.green800}
+          pillColor={colors?.green100}
+          pillTextColor={colors?.green800}
         />
       </BorderDiv>
       <BorderDiv>
@@ -71,8 +71,8 @@ const Stats = () => (
           svg={<StyledArrowDown />}
           diffDescription="Decreased by"
           diff="4.05%"
-          pillColor={colors.red100}
-          pillTextColor={colors.red800}
+          pillColor={colors?.red100}
+          pillTextColor={colors?.red800}
         />
       </BorderDiv>
     </Card>

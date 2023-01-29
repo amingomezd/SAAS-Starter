@@ -92,10 +92,10 @@ const CreateTask = () => {
             </TextAreaWrapper>
             <ButtonWrapper>
               <Button
-                textColor={colors.white}
-                backgroundColor={colors.indigo600}
-                hoverBackgroundColor={colors.indigo500}
-                activeBackgroundColor={colors.indigo600}
+                textColor={colors?.white}
+                backgroundColor={colors?.indigo600}
+                hoverBackgroundColor={colors?.indigo500}
+                activeBackgroundColor={colors?.indigo600}
               >
                 Save
               </Button>
