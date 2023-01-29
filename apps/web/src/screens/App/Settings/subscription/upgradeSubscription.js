@@ -19,9 +19,7 @@ const UpgradeSubscription = ({ subscriptionState }) => {
           query: { subscription_id, currentPlan, isUpgradeFlow, subscription_item }
         }}
       >
-        <a>
           <Button>Submit</Button>
-        </a>
       </Link>
     </Card>
   );

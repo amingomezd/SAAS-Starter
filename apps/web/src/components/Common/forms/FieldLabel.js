@@ -9,7 +9,6 @@ const Label = styled.label`
   font-weight: 500;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  color: ${colors.gray700};
 `;
 
 export default Label;

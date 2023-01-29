@@ -6,7 +6,6 @@ const Svg = styled.svg`
   flex-shrink: 0;
   height: 1.25rem;
   width: 1.25rem;
-  color: ${colors.coolGray400};
 `;
 
 const Cash = () => (

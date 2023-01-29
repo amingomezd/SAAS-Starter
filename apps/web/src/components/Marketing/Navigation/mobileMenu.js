@@ -24,13 +24,9 @@ const Wrapper = styled.div`
   border-radius: 0.5rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   padding: 1.25rem 1.25rem 1.5rem;
-  background-color: ${colors.white};
-  border-color: ${colors.gray50};
 
   transform-origin: top right;
-  @media (min-width: ${breakpoints.medium}) {
-    display: none;
-  }
+
 `;
 
 const Header = styled.div`
@@ -39,7 +35,6 @@ const Header = styled.div`
   justify-content: space-between;
   padding-top: 1rem;
   padding-bottom: 2rem;
-}
 `;
 
 const StyledSmallLogo = styled(SmallLogo)`
@@ -56,16 +51,11 @@ const CloseButton = styled.div`
   justify-content: center;
   padding: 0.5rem;
   border-radius: 0.375rem;
-  color: ${colors.gray400};
   &:hover {
-    color: ${colors.gray500};
-    background-color: ${colors.gray100};
   }
   &:focus {
     outline: 2px solid transparent;
     outline-offset: 2px;
-    color: ${colors.gray500};
-    background-color: ${colors.gray100};
   }
 `;
 
@@ -89,7 +79,6 @@ const Item = styled.div`
   align-items: center;
   border-radius: 0.5rem;
   &:hover {
-    background-color: ${colors.gray50};
   }
 `;
 
@@ -101,8 +90,6 @@ const MenuImageWrapper = styled.div`
   height: 2.5rem;
   width: 2.5rem;
   border-radius: 0.375rem;
-  background-color: ${colors.indigo500};
-  color: ${colors.white};
 `;
 
 const MenuImg = styled.img`
@@ -117,7 +104,6 @@ const Title = styled.div`
   font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 500;
-  color: ${colors.gray900};
 `;
 
 const ButtonWrapper1 = styled.div`
@@ -142,19 +128,14 @@ const Button = styled.div`
   line-height: 1.5rem;
   font-weight: 500;
   border-radius: 0.375rem;
-  color: ${colors.white};
-  background-color: ${colors.indigo600};
   &:hover {
-    background-color: ${colors.indigo500};
   }
   &:focus {
     outline: 2px solid transparent;
     outline-offset: 2px;
-    border-color: ${colors.indigo700};
     box-shadow: 0 0 0 3px rgba(180, 198, 252, 0.45);
   }
   &:active {
-    background-color: ${colors.indigo700};
   }
 `;
 
@@ -171,7 +152,6 @@ const MobileMenu = ({ mobileMenuHandler }) => (
     <div>
       <Nav>
         <Link href="/pricing">
-          <a>
             <Item>
               <MenuImageWrapper>
                 {/*<!-- Heroicon name: view-grid -->*/}
@@ -179,13 +159,11 @@ const MobileMenu = ({ mobileMenuHandler }) => (
               </MenuImageWrapper>
               <Title>Pricing</Title>
             </Item>
-          </a>
         </Link>
 
         <hr />
         <h3>Solutions</h3>
         <Link href="/product/page1">
-          <a>
             <Item>
               <MenuImageWrapper>
                 {/*<!-- Heroicon name: view-grid -->*/}
@@ -193,10 +171,8 @@ const MobileMenu = ({ mobileMenuHandler }) => (
               </MenuImageWrapper>
               <Title>Product Page 1</Title>
             </Item>
-          </a>
         </Link>
         <Link href="/product/page2">
-          <a>
             <Item>
               <MenuImageWrapper>
                 {/*<!-- Heroicon name: view-grid -->*/}
@@ -204,10 +180,8 @@ const MobileMenu = ({ mobileMenuHandler }) => (
               </MenuImageWrapper>
               <Title>Product Page 2</Title>
             </Item>
-          </a>
         </Link>
         <Link href="/product/page3">
-          <a>
             <Item>
               <MenuImageWrapper>
                 {/*<!-- Heroicon name: view-grid -->*/}
@@ -215,10 +189,8 @@ const MobileMenu = ({ mobileMenuHandler }) => (
               </MenuImageWrapper>
               <Title>Product Page 3</Title>
             </Item>
-          </a>
         </Link>
         <Link href="/product/page4">
-          <a>
             <Item>
               <MenuImageWrapper>
                 {/*<!-- Heroicon name: view-grid -->*/}
@@ -226,16 +198,13 @@ const MobileMenu = ({ mobileMenuHandler }) => (
               </MenuImageWrapper>
               <Title>Product Page 4</Title>
             </Item>
-          </a>
         </Link>
       </Nav>
     </div>
     <ButtonWrapper1>
       <ButtonWrapper2>
         <Link href="/auth/login">
-          <a>
             <Button>Sign up</Button>
-          </a>
         </Link>
       </ButtonWrapper2>
     </ButtonWrapper1>

@@ -22,12 +22,7 @@ const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  @media (min-width: ${breakpoints.medium}) {
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
+  
 `;
 
 const StyledCard = styled(Card)`
@@ -59,16 +54,12 @@ const StyledLink = styled.div`
 
 const AppsSection = styled.div`
   margin: 0;
-  @media (min-width: ${breakpoints.medium}) {
-    margin-right: 5rem;
-  }
+
 `;
 
 const StyledHeader = styled.h1`
   text-align: center;
-  @media (min-width: ${breakpoints.medium}) {
-    text-align: left;
-  }
+
 `;
 
 const AppsWrapper = styled.div`
@@ -151,13 +142,11 @@ const Dashboard = () => {
               {!orgs.length == 0 ? (
                 orgs.map((org) => (
                   <Link href={`/app/${org.id}/dashboard`} state={{ org }}>
-                    <a>
                       <StyledCard key={org.id}>
                         <StyledLink>{org.org_name}</StyledLink>
 
                         <RoleText>Role: admin</RoleText>
                       </StyledCard>
-                    </a>
                   </Link>
                 ))
               ) : (

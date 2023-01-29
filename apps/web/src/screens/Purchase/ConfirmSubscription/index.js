@@ -11,12 +11,6 @@ import ConfirmButton from '../../../components/Purchase/purchaseButton';
 const Wrapper = styled.div`
   margin-top: 2rem;
   text-align: center;
-  @media (min-width: ${breakpoints.small}) {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    max-width: 28rem;
-  }
 `;
 
 const Title = styled.h2`

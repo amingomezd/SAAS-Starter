@@ -15,11 +15,8 @@ const Wrapper = styled.div`
   margin: 4px 0 8px;
   height: 40px;
   &:hover {
-    color: ${colors.dodgerBlue};
   }
   &:focus {
-    color: ${colors.dodgerBlue};
-    background-color: ${colors.lilyWhite};
     outline: 2px solid transparent;
     outline-offset: 2px;
   }
@@ -36,12 +33,10 @@ const TitleWrapper = styled.span`
 
 const MobileSidebarItem = ({ link, toggleMenu, svg, title, theme }) => (
   <Link href={link}>
-    <a>
       <Wrapper onClick={toggleMenu} theme={theme}>
         <SvgWrapper>{svg}</SvgWrapper>
         <TitleWrapper>{title}</TitleWrapper>
       </Wrapper>
-    </a>
   </Link>
 );
 

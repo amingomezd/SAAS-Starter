@@ -23,11 +23,7 @@ const StyledIcon = styled.div`
 
 const StyledSider = styled(Layout.Sider)`
   display: none;
-
-  @media (min-width: ${breakpoints.medium}) {
-    display: initial;
-  }
-  box-shadow: fade(${colors.doveGray}, 10%) 0 0 28px 0;
+  
   z-index: 10;
   .ant-layout-sider-children {
     display: flex;
@@ -98,11 +94,9 @@ const Footer = styled.div`
 `;
 
 const Bulb = styled(BulbOutlined)`
-  color: ${colors.doveGray};
 `;
 
 const Span = styled.span`
-  color: ${colors.doveGray};
 `;
 
 const SidebarDesktop = ({ theme, toggleTheme, org_id, location, collapsed }) => {

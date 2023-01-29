@@ -29,9 +29,6 @@ const Wrapper = styled.div`
   left: 0;
   display: flex;
   z-index: 40;
-  @media (min-width: ${breakpoints.medium}) {
-    display: none;
-  }
 `;
 
 const FixedDiv = styled.div`
@@ -48,7 +45,6 @@ const AbsoluteDiv = styled.div`
   bottom: 0;
   right: 0;
   left: 0;
-  background-color: ${colors.gray600};
   opacity: 0.75;
   transition-property: opacity;
   transition-duration: 300ms;
@@ -100,7 +96,6 @@ const Button = styled.div`
   height: 3rem;
   border-radius: 9999px;
   &:hover {
-    background-color: ${colors.gray600};
     outline: 2px solid transparent;
     outline-offset: 2px;
   }
@@ -157,11 +152,9 @@ const Footer = styled.div`
 `;
 
 const Bulb = styled(BulbOutlined)`
-  color: ${colors.doveGray};
 `;
 
 const Span = styled.span`
-  color: ${colors.doveGray};
 `;
 
 const SidebarMobile = ({ toggleMobileMenu, org_id, theme, toggleTheme }) => {

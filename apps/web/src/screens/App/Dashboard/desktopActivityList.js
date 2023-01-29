@@ -6,9 +6,7 @@ import Cash from '../../../components/App/svgs/cash';
 
 const Wrapper = styled.div`
   display: none;
-  @media (min-width: ${breakpoints.small}) {
-    display: block;
-  }
+
   margin-top: 0.5rem;
   vertical-align: middle;
   min-width: 100%;
@@ -21,14 +19,16 @@ const Table = styled.table`
   min-width: 100%;
 `;
 
+const TableBody = styled.table`
+  min-width: 100%;
+`;
+
 const ThBase = styled.th`
   padding: 0.75rem 1.5rem;
-  background-color: ${colors.coolGray50};
   font-weight: medium;
   font-size: 0.75rem;
   line-height: 1rem;
   text-transform: uppercase;
-  color: ${colors.coolGray500};
   letter-spacing: 0.05em;
 `;
 
@@ -43,13 +43,7 @@ const StyledTh2 = styled(ThBase)`
 const StyledTh3 = styled(ThBase)`
   text-align: left;
   display: none;
-  @media (min-width: ${breakpoints.medium}) {
-    display: block;
-  }
-`;
 
-const TableBody = styled.tbody`
-  background-color: ${colors.white};
 `;
 
 const TdBase = styled.td`
@@ -60,7 +54,6 @@ const TdBase = styled.td`
 `;
 
 const StyledTd1 = styled(TdBase)`
-  color: ${colors.gray900};
   max-width: 0rem;
   width: 100%;
 `;
@@ -70,16 +63,12 @@ const TransactionName = styled.div`
 `;
 
 const StyledTd2 = styled(TdBase)`
-  color: ${colors.coolGray500};
   text-align: right;
 `;
 
 const StyledTd3 = styled(TdBase)`
-  color: ${colors.coolGray500};
   display: none;
-  @media (min-width: ${breakpoints.medium}) {
-    display: block;
-  }
+
 `;
 
 const PaymentButton = styled.a`
@@ -92,14 +81,11 @@ const PaymentButton = styled.a`
 `;
 
 const Title = styled.p`
-  color: ${colors.coolGray500};
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   padding-left: 12px;
-  ${PaymentButton}:hover {
-    color: ${colors.gray900};
-  }
+
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow,
     transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -114,29 +100,23 @@ const Status = styled.span`
   font-size: 0.75rem;
   font-weight: 500;
   line-height: 1rem;
-  background-color: ${colors.green100};
-  color: ${colors.green800};
   text-transform: capitalize;
 `;
 
 const Number = styled.span`
-  color: ${colors.gray900};
   font-weight: 500;
 `;
 
 const Nav = styled.nav`
-  background-color: ${colors.white};
   padding: 0.75rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid ${colors.coolGray200};
 `;
 
 const NavText = styled.p`
   font-size: 0.875rem;
   line-height: 1.25rem;
-  color: ${colors.coolGray700};
 `;
 
 const Span = styled.span`

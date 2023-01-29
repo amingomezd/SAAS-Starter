@@ -5,13 +5,10 @@ import CountUp from 'react-countup';
 
 const Wrapper = styled.div`
   padding: 1.25rem 1rem;
-  @media (min-width: ${breakpoints.small}) {
-    padding: 1.5rem;
-  }
+
 `;
 
 const Dt = styled.dt`
-  color: ${colors.gray900};
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5rem;
@@ -22,25 +19,18 @@ const Dd = styled.dd`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  @media (min-width: ${breakpoints.medium}) {
-    display: block;
-  }
-  @media (min-width: ${breakpoints.large}) {
-    display: flex;
-  }
+
 `;
 
 const Number = styled.div`
   display: flex;
   align-items: baseline;
-  color: ${colors.indigo600};
   font-weight: 600;
   font-size: 1.5rem;
   line-height: 2rem;
 `;
 
 const InitialNumber = styled.span`
-  color: ${colors.gray500};
   font-weight: 500;
   line-height: 1.25rem;
   font-size: 0.875rem;
@@ -69,12 +59,7 @@ const Pill = styled.div`
   font-size: 0.875rem;
   line-height: 1.25rem;
   padding: 0.125rem 0.625rem;
-  @media (min-width: ${breakpoints.medium}) {
-    margin-top: 0.5rem;
-  }
-  @media (min-width: ${breakpoints.large}) {
-    margin-top: 0;
-  }
+
 `;
 
 const StatColumn = ({ title, number, svg, diffDescription, diff, pillTextColor, pillColor }) => (

@@ -9,29 +9,20 @@ const Title = styled.h2`
   font-size: 1.125rem;
   line-height: 1.5rem;
   font-weight: 500;
-  color: ${colors.gray900};
 `;
 
 const Card = styled.div`
-  background-color: ${colors.white};
   overflow: hidden;
   border-radius: 0.5rem;
   margin-top: 1.25rem;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
-  @media (min-width: ${breakpoints.medium}) {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
+
 `;
 
 const BorderDiv = styled.div`
-  @media (min-width: ${breakpoints.medium}) {
-    border-left: 1px solid ${colors.gray200};
-  }
-  @media (max-width: ${breakpoints.medium}) {
-    border-top: 1px solid ${colors.gray200};
-  }
+
 `;
 
 const arrowStyles = css`
@@ -42,13 +33,9 @@ const arrowStyles = css`
 `;
 
 const StyledArrowUp = styled(ArrowUp)`
-  color: ${colors.green500};
-  ${arrowStyles}
 `;
 
 const StyledArrowDown = styled(ArrowDown)`
-  color: ${colors.red500};
-  ${arrowStyles}
 `;
 
 const Stats = () => (
@@ -62,8 +49,8 @@ const Stats = () => (
           svg={<StyledArrowUp />}
           diffDescription="Increased by"
           diff="12%"
-          pillColor={colors.green100}
-          pillTextColor={colors.green800}
+          pillColor={colors?.green100}
+          pillTextColor={colors?.green800}
         />
       </div>
       <BorderDiv>
@@ -73,8 +60,8 @@ const Stats = () => (
           svg={<StyledArrowUp />}
           diffDescription="Increased by"
           diff="2.02%"
-          pillColor={colors.green100}
-          pillTextColor={colors.green800}
+          pillColor={colors?.green100}
+          pillTextColor={colors?.green800}
         />
       </BorderDiv>
       <BorderDiv>
@@ -84,8 +71,8 @@ const Stats = () => (
           svg={<StyledArrowDown />}
           diffDescription="Decreased by"
           diff="4.05%"
-          pillColor={colors.red100}
-          pillTextColor={colors.red800}
+          pillColor={colors?.red100}
+          pillTextColor={colors?.red800}
         />
       </BorderDiv>
     </Card>

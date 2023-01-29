@@ -5,7 +5,6 @@ import { colors } from '../../../styles/theme';
 
 const StyledTick = styled.div`
   margin-top: -1rem;
-  color: ${colors.green500};
   height: 1.5rem;
   width: 1.5rem;
 `;
@@ -20,7 +19,6 @@ const Wrapper = styled.div`
 `;
 
 const Paragraph = styled.p`
-  color: ${colors.gray500};
   margin-left: 0.75rem;
   line-height: 1.5rem;
   font-weight: 500;

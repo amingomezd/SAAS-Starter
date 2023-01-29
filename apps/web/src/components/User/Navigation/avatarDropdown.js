@@ -31,7 +31,6 @@ const Wrapper = styled.div`
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   width: max-content;
   border-radius: 0.375rem;
-  background-color: ${colors.white};
 `;
 
 const ItemWrapper = styled.div`
@@ -40,7 +39,6 @@ const ItemWrapper = styled.div`
 `;
 
 const Border = styled.div`
-  border-top: 1px solid ${colors.gray100};
 `;
 
 const AvatarDropDown = ({ avatarMenuHandler }) => {
@@ -56,9 +54,7 @@ const AvatarDropDown = ({ avatarMenuHandler }) => {
     <Wrapper role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
       <ItemWrapper>
         <Link href="/user/settings/account">
-          <a>
             <DropdownItem onClick={avatarMenuHandler} title="Account Settings" />
-          </a>
         </Link>
       </ItemWrapper>
       <Border />

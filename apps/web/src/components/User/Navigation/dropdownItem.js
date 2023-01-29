@@ -8,14 +8,9 @@ const Wrapper = styled.div`
   padding: 1rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  color: ${colors.gray700};
   &:hover {
-    color: ${colors.gray900};
-    background-color: ${colors.gray100};
   }
   &:focus {
-    color: ${colors.gray900};
-    background-color: ${colors.gray100};
     outline: 2px solid transparent;
     outline-offset: 2px;
   }

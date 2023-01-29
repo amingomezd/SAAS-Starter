@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { colors } from '../../../styles/theme';
 
 const Svg = styled.svg`
-  color: ${colors.white};
   flex-shrink: 0;
   height: 1.25rem;
   width: 1.25rem;

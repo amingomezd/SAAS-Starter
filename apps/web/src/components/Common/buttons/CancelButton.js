@@ -3,7 +3,6 @@ import { colors } from '../../../styles/theme';
 
 const CancelButton = styled.button`
   color: black;
-  background-color: ${colors.white};
   padding: 0.5rem 1rem 0.5rem 1rem;
   font-weight: 600;
   letter-spacing: 0.025rem;

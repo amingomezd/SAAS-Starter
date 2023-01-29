@@ -5,7 +5,6 @@ import { colors } from '../../../styles/theme';
 const Svg = styled.svg`
   height: 1.5rem;
   width: 1.5rem;
-  color: ${colors.white};
 `;
 
 const Cross = () => (

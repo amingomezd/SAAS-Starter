@@ -2,9 +2,10 @@ import mongoose from 'mongoose';
 
 const mongoURL = process.env.MONGO_URL;
 
+mongoose.set('strictQuery', false);
+
 let db = mongoose.connect(mongoURL, {
  useNewUrlParser: true,
- useCreateIndex: true,
  useUnifiedTopology: true
 });
 

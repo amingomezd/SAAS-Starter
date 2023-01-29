@@ -17,9 +17,6 @@ const Wrapper = styled.div`
   left: 0;
   display: flex;
   z-index: 40;
-  @media (min-width: ${breakpoints.medium}) {
-    display: none;
-  }
 `;
 
 const FixedDiv = styled.div`
@@ -36,7 +33,6 @@ const AbsoluteDiv = styled.div`
   bottom: 0;
   right: 0;
   left: 0;
-  background-color: ${colors.gray600};
 `;
 
 const showMobileSidebar = keyframes`
@@ -85,7 +81,6 @@ const CloseButton = styled.div`
   height: 3rem;
   border-radius: 9999px;
   &:hover {
-    background-color: ${colors.gray600};
     outline: 2px solid transparent;
     outline-offset: 2px;
   }
@@ -127,9 +122,7 @@ const SidebarMobile = ({ toggleMobileMenu }) => {
         <Sidebar>
           <LogoWrapper>
             <Link href="/user/dashboard">
-              <a>
                 <LargeLogo textColor={colors.white} />
-              </a>
             </Link>
           </LogoWrapper>
           <Nav>

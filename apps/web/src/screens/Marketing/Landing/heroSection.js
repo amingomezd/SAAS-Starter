@@ -15,10 +15,7 @@ const Container = styled.div`
 const HeroTextContainer = styled.div`
   padding: 3rem 1rem 5rem;
   text-align: center;
-  @media (min-width: ${breakpoints.large}) {
-    padding: 6rem 2rem 12rem;
-    text-align: left;
-  }
+
 `;
 
 const HeroHeader = styled.h2`
@@ -26,10 +23,7 @@ const HeroHeader = styled.h2`
   letter-spacing: -0.03rem;
   line-height: 2.5rem;
   font-weight: 800;
-  @media (min-width: ${breakpoints.small}) {
-    line-height: 1;
-    font-size: 3.3rem;
-  }
+
 `;
 
 const Span = styled.span`
@@ -39,12 +33,6 @@ const Span = styled.span`
 const Paragraph = styled.p`
   margin-top: 0.75rem;
   font-size: 1.125rem;
-  @media (min-width: ${breakpoints.small}) {
-    font-size: 1.25rem;
-  }
-  @media (min-width: ${breakpoints.medium}) {
-    margin-top: 1.25rem;
-  }
 `;
 
 const StyledButton = styled.button`
@@ -64,10 +52,7 @@ const ImageContainer = styled.div`
   background-color: ${(props) => props.theme.backgroundLanding};
   background-repeat: no-repeat;
   background-position: 0% 0%;
-
-  @media (min-width: ${breakpoints.large}) {
-    display: block;
-  }
+  
 `;
 
 const fadeInLeft = keyframes`
@@ -102,9 +87,7 @@ const HeroSection = () => (
         Elit sunt amet fugiat veniam occaecat fugiat aliqua.
       </Paragraph>
       <Link href="/auth/login">
-        <a>
           <StyledButton type="primary">Get started &#8594;</StyledButton>
-        </a>
       </Link>
     </HeroTextContainer>
 

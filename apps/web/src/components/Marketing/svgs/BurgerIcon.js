@@ -3,9 +3,6 @@ import styled from 'styled-components';
 import { breakpoints } from '../../../styles/theme';
 
 const Wrapper = styled.div`
-  @media (min-width: ${breakpoints.large}) {
-    display: none;
-  }
 
   border: 0;
   background: transparent;

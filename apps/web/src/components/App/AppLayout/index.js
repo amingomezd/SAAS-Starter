@@ -24,7 +24,6 @@ export const THEMES = {
 };
 
 const Wrapper = styled.div`
-  background-color: ${colors.gray100};
   overflow: hidden;
   display: flex;
   height: 100vh;

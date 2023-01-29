@@ -6,7 +6,6 @@ import { useRouter } from 'next/router';
 import ConfirmButton from '../../../components/Purchase/purchaseButton';
 
 const Wrapper = styled.div`
-  background-color: ${colors.coolGray50};
   height: 100vh;
   padding-top: 2rem;
 `;

@@ -6,22 +6,10 @@ import SidebarMobile from '../Navigation/mobileSidebar';
 import Header from '../Navigation/header';
 
 const Wrapper = styled.div`
-  background-color: ${colors.gray50};
   min-height: 100vh;
   padding-left: 1rem;
   padding-right: 1rem;
   padding-bottom: 2rem;
-
-  @media (min-width: ${breakpoints.small}) {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-bottom: 3rem;
-  }
-  @media (min-width: ${breakpoints.large}) {
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-bottom: 3rem;
-  }
 `;
 
 const Layout = ({ children }) => {

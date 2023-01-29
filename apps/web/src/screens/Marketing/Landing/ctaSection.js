@@ -4,7 +4,6 @@ import { colors, breakpoints } from '../../../styles/theme';
 import Link from 'next/link';
 
 const Background = styled.div`
-  background-color: ${colors.indigo600};
 `;
 
 const Wrapper = styled.div`
@@ -13,24 +12,14 @@ const Wrapper = styled.div`
   margin-right: auto;
   text-align: center;
   padding: 4rem 1rem;
-  @media (min-width: ${breakpoints.small}) {
-    padding: 5rem 1.5rem;
-  }
-  @media (min-width: ${breakpoints.large}) {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
+
 `;
 
 const Header = styled.h2`
   font-size: 1.875rem;
   line-height: 2.25rem;
   font-weight: 800;
-  color: ${colors.white};
-  @media (min-width: ${breakpoints.small}) {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-  }
+
 `;
 
 const Span = styled.span`
@@ -41,7 +30,6 @@ const Paragraph = styled.p`
   margin-top: 1rem;
   font-size: 1.125rem;
   line-height: 1.5rem;
-  color: ${colors.indigo100};
 `;
 
 const StyledLink = styled.a`
@@ -57,16 +45,9 @@ const StyledLink = styled.a`
   line-height: 1.5rem;
   font-weight: 500;
   border-radius: 0.375rem;
-  color: ${colors.indigo600};
-  background-color: ${colors.white};
   &:hover {
-    color: ${colors.indigo500};
-    background-color: ${colors.indigo50};
   }
-
-  @media (min-width: ${breakpoints.small}) {
-    width: auto;
-  }
+  
 `;
 
 const CTASection = () => (

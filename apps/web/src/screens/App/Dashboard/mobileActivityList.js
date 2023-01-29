@@ -7,26 +7,20 @@ import Cash from '../../../components/App/svgs/cash';
 
 const Wrapper = styled.div`
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  @media (min-width: ${breakpoints.small}) {
-    display: none;
-  }
+
 `;
 
 const List = styled.ul`
   margin-top: 0.5rem;
   overflow: hidden;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  @media (min-width: ${breakpoints.small}) {
-    display: none;
-  }
+
 `;
 
 const Card = styled.a`
-  background-color: ${colors.white};
   display: block;
   padding: 1rem;
   &:hover {
-    background-color: ${colors.coolGray50};
   }
 `;
 
@@ -44,7 +38,6 @@ const TextWrapper2 = styled.div`
 `;
 
 const Text = styled.div`
-  color: ${colors.coolGray500};
   font-size: 0.875rem;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -59,17 +52,14 @@ const Title = styled.p`
 `;
 
 const Number = styled.span`
-  color: ${colors.coolGray900};
   font-weight: 500;
 `;
 
 const Nav = styled.nav`
-  background-color: ${colors.white};
   padding: 0.75rem 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid ${colors.coolGray200};
 `;
 
 const ButtonsWrapper = styled.div`

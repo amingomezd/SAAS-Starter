@@ -8,10 +8,7 @@ import OrgContext from '../../../utils/orgContext';
 const CardsWrapper = styled.div`
   display: flex;
   justify-content: space-around;
-  @media (max-width: ${breakpoints.small}) {
-    flex-direction: column;
-    align-items: center;
-  }
+
 `;
 
 const FeaturesWrapper = styled.div`
@@ -69,14 +66,12 @@ const PlanPrice = styled.div`
 const PurchaseHeader = styled.h1`
   font-size: 1.125rem;
   font-weight: 700;
-  color: ${colors.coolGray700};
   text-align: center;
 `;
 
 const PurchaseText = styled.div`
   font-size: 1.075rem;
   font-weight: 500;
-  color: ${colors.coolGray700};
   text-align: center;
   padding-bottom: 1rem;
 `;

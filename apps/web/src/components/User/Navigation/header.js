@@ -37,25 +37,14 @@ const MenuButton = styled.div`
   justify-content: center;
   border-radius: 0.375rem;
   cursor: pointer;
-  color: ${colors.white};
   &:focus {
     outline: 2px solid transparent;
     outline-offset: 2px;
-  }
-  @media (min-width: ${breakpoints.medium}) {
-    display: none;
   }
 `;
 
 const LinksWrapper = styled.div`
   display: none;
-  @media (min-width: ${breakpoints.medium}) {
-    display: flex;
-    justify-content: flex-start;
-    padding: 1rem;
-
-    width: 80%;
-  }
 `;
 
 const LinkItem = styled.div`
@@ -65,12 +54,6 @@ const LinkItem = styled.div`
 
 const LogoWrapper = styled.div`
   display: none;
-  @media (min-width: ${breakpoints.medium}) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-  }
 `;
 
 const AvatarWrapper = styled.div`
@@ -81,7 +64,6 @@ const AvatarWrapper = styled.div`
 const Image = styled.img`
   width: 3rem;
   height: 3rem;
-  background-color: ${colors.gray300};
   border-radius: 9999px;
   flex-shrink: 0;
 `;
@@ -89,34 +71,17 @@ const Image = styled.img`
 const StyledMdAccountCircle = styled(MdAccountCircle)`
   width: 2.5rem;
   height: 2.5rem;
-  background-color: ${colors.gray300};
   border-radius: 9999px;
   flex-shrink: 0;
 `;
 
 const IconButton = styled(Badge)`
   display: none;
-  @media (min-width: ${breakpoints.medium}) {
-    width: 48px;
-    height: 48px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 24px;
-    cursor: pointer;
-    margin-top: 0.8rem;
-    margin-right: 0.5rem;
-    & + .iconButton {
-      margin-left: 8px;
-    }
-  }
 `;
 
 const IconFont = styled(IoNotificationsOutline)`
-  color: ${colors.cadetBlue};
   font-size: 24px;
   &:hover {
-    color: ${colors.dodgerBlue};
   }
 `;
 
@@ -150,15 +115,12 @@ const NotificationItem = styled(List.Item)`
 
 const StyledRightOutlined = styled(RightOutlined)`
   font-size: 10px;
-  color: ${colors.silver};
 `;
 
 const ListItemMeta = styled(List.Item.Meta)`
   h4 {
-    color: ${colors.doveGray};
   }
   div.ant-list-item-meta-description {
-    color: ${colors.doveGray};
   }
 `;
 
@@ -195,9 +157,7 @@ const MobileHeader = ({ mobileMenuHandler }) => {
       </MenuButton>
       <LogoWrapper>
         <Link href="/user/dashboard">
-          <a>
             <LargeLogo textColor={colors.white} />
-          </a>
         </Link>
       </LogoWrapper>
       <LinksWrapper>

@@ -28,17 +28,11 @@ const QuoteWrapper = styled.div`
 const FooterWrapper = styled.div`
   margin-top: 2rem;
   text-align: center;
-  @media (min-width: ${breakpoints.medium}) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+
 `;
 
 const ImageWrapper = styled.div`
-  @media (min-width: ${breakpoints.medium}) {
-    flex-shrink: 0;
-  }
+
 `;
 
 const Image = styled.img`
@@ -52,12 +46,7 @@ const Image = styled.img`
 const TitleWrapper = styled.div`
   margin-top: 0.75rem;
   text-align: center;
-  @media (min-width: ${breakpoints.medium}) {
-    margin-top: 0;
-    margin-left: 1rem;
-    display: flex;
-    align-items: center;
-  }
+
 `;
 
 const Title = styled.div`
@@ -68,9 +57,7 @@ const Title = styled.div`
 
 const SlashSvg = styled.svg`
   display: none;
-  @media (min-width: ${breakpoints.medium}) {
-    display: block;
-  }
+
   color: ${(props) => props.theme.primary};
   margin-left: 0.25rem;
   margin-right: 0.25rem;

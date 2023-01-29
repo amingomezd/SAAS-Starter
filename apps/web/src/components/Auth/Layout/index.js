@@ -6,29 +6,19 @@ import { colors, breakpoints } from '../../../styles/theme';
 import Header from '../Navigation/header';
 import Footer from '../Navigation/footer';
 
-const Wrapper = styled.div`
-  background-color: ${colors.gray50};
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-
-  @media (min-width: ${breakpoints.small}) {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-  @media (min-width: ${breakpoints.large}) {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-`;
+// const Wrapper = styled.div`
+//   min-height: 100vh;
+//   display: flex;
+//   flex-direction: column;
+// `;
 
 const Layout = ({ children }) => {
   return (
-    <Wrapper>
+    <>
       <Header />
       <div>{children}</div>
       <Footer />
-    </Wrapper>
+    </>
   );
 };
 
